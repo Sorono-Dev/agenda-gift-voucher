@@ -18,6 +18,7 @@ A modern, scalable gift voucher solution with code generation, redemption tracki
 - [Node.js](https://nodejs.org/) (v18+)
 - [Bun](https://bun.sh/) (v1.2.3+)
 - [PostgreSQL](https://www.postgresql.org/) (v16 recommended) or SQLite for demo
+- [Docker](https://www.docker.com/) and [Docker Compose](https://docs.docker.com/compose/) (if using containerized PostgreSQL)
 
 ### Setup
 
@@ -32,7 +33,12 @@ A modern, scalable gift voucher solution with code generation, redemption tracki
    bun install
    ```
 
-3. Configure environment variables:
+3. Start PostgreSQL using Docker Compose:
+   ```bash
+   docker compose up -d postgres
+   ```
+
+4. Configure environment variables:
    - Create a `.env` file in the `server` directory with the following content:
      ```
      # For PostgreSQL
@@ -42,7 +48,7 @@ A modern, scalable gift voucher solution with code generation, redemption tracki
      # DATABASE_URL="file:./dev.db"
      ```
 
-4. Initialize the database:
+5. Initialize the database:
    ```bash
    cd server
    bunx prisma migrate dev
