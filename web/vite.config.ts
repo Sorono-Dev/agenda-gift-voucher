@@ -24,4 +24,7 @@ export default defineConfig({
       projects: []   // <- force à ne regarder que ./tsconfig.json
     }),
   ],
+  define: {
+    'process.env.SERVER_BASE_URL': JSON.stringify(process.env.SERVER_BASE_URL),
+  },
 });

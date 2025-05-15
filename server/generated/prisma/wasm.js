@@ -120,9 +120,83 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
   Serializable: 'Serializable'
 });
 
+exports.Prisma.GiftVoucherScalarFieldEnum = {
+  id: 'id',
+  code: 'code',
+  type: 'type',
+  initialValue: 'initialValue',
+  remainingValue: 'remainingValue',
+  initialSessions: 'initialSessions',
+  remainingSessions: 'remainingSessions',
+  percent: 'percent',
+  createdAt: 'createdAt',
+  expiresAt: 'expiresAt',
+  isActive: 'isActive',
+  customer: 'customer'
+};
+
+exports.Prisma.RedemptionScalarFieldEnum = {
+  id: 'id',
+  voucherId: 'voucherId',
+  amount: 'amount',
+  sessions: 'sessions',
+  createdAt: 'createdAt',
+  description: 'description'
+};
+
+exports.Prisma.ProductScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  price: 'price',
+  description: 'description',
+  category: 'category'
+};
+
+exports.Prisma.SaleScalarFieldEnum = {
+  id: 'id',
+  timestamp: 'timestamp',
+  amount: 'amount',
+  paymentMethod: 'paymentMethod',
+  voucherCode: 'voucherCode',
+  products: 'products'
+};
+
+exports.Prisma.SortOrder = {
+  asc: 'asc',
+  desc: 'desc'
+};
+
+exports.Prisma.NullableJsonNullValueInput = {
+  DbNull: Prisma.DbNull,
+  JsonNull: Prisma.JsonNull
+};
+
+exports.Prisma.QueryMode = {
+  default: 'default',
+  insensitive: 'insensitive'
+};
+
+exports.Prisma.NullsOrder = {
+  first: 'first',
+  last: 'last'
+};
+
+exports.Prisma.JsonNullValueFilter = {
+  DbNull: Prisma.DbNull,
+  JsonNull: Prisma.JsonNull,
+  AnyNull: Prisma.AnyNull
+};
+exports.VoucherType = exports.$Enums.VoucherType = {
+  AMOUNT: 'AMOUNT',
+  SESSION: 'SESSION',
+  PERCENT: 'PERCENT'
+};
 
 exports.Prisma.ModelName = {
-
+  GiftVoucher: 'GiftVoucher',
+  Redemption: 'Redemption',
+  Product: 'Product',
+  Sale: 'Sale'
 };
 
 /**

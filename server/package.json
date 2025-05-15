@@ -7,7 +7,8 @@
     "dev": "bun --hot index.ts"
   },
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "@types/qrcode": "^1.5.5"
   },
   "peerDependencies": {
     "typescript": "^5"
@@ -19,7 +20,9 @@
     "@fastify/swagger": "^9.5.1",
     "@prisma/client": "^6.8.0",
     "fastify": "^5.3.3",
+    "nanoid": "^5.1.5",
     "prisma": "^6.8.0",
+    "qrcode": "^1.5.4",
     "zod": "^3.24.4"
   }
 }

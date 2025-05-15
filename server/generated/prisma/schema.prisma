@@ -13,3 +13,52 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+enum VoucherType {
+  AMOUNT
+  SESSION
+  PERCENT
+}
+
+model GiftVoucher {
+  id                String       @id @default(uuid())
+  code              String       @unique
+  type              VoucherType
+  initialValue      Decimal?     @db.Decimal(10, 2)
+  remainingValue    Decimal?     @db.Decimal(10, 2)
+  initialSessions   Int?
+  remainingSessions Int?
+  percent           Decimal?     @db.Decimal(5, 2)
+  createdAt         DateTime     @default(now())
+  expiresAt         DateTime?
+  isActive          Boolean      @default(true)
+  redemptions       Redemption[]
+  customer          String?
+}
+
+model Redemption {
+  id          String      @id @default(uuid())
+  voucher     GiftVoucher @relation(fields: [voucherId], references: [id])
+  voucherId   String
+  amount      Decimal?    @db.Decimal(10, 2)
+  sessions    Int?
+  createdAt   DateTime    @default(now())
+  description String?
+}
+
+model Product {
+  id          String  @id @default(uuid())
+  name        String
+  price       Float
+  description String?
+  category    String?
+}
+
+model Sale {
+  id            String   @id @default(uuid())
+  timestamp     DateTime @default(now())
+  amount        Float
+  paymentMethod String
+  voucherCode   String?
+  products      Json? // Array of product IDs with quantities
+}
