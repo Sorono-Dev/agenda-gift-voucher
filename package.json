@@ -1,0 +1,21 @@
+{
+  "name": "agenda-gift-voucher",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+
+  "scripts": {
+    "dev": "bun run --cwd server dev & bun run --cwd web dev",
+
+    "server:dev": "bun run --cwd server dev",
+    "web:dev": "bun run --cwd web dev"
+  },
+
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "workspaces": ["server", "web"]
+}
