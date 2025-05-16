@@ -309,7 +309,7 @@ export default function Checkout() {
           {/* Produits disponibles */}
           <div className="lg:col-span-1">
             <div className="bg-white p-6 rounded-lg shadow-md">
-              <h2 className="text-xl font-semibold mb-4 pb-2 border-b">Services disponibles</h2>
+              <h2 className="text-xl font-semibold mb-4 pb-2 border-b text-gray-700">Services disponibles</h2>
               <ul className="space-y-4">
                 {products.map((p) => (
                   <li key={p.id} className="flex justify-between items-center border-b pb-3">
@@ -334,7 +334,7 @@ export default function Checkout() {
           {/* Panier & Checkout */}
           <div className="lg:col-span-2">
             <div className="bg-white p-6 rounded-lg shadow-md mb-6">
-              <h2 className="text-xl font-semibold mb-4 pb-2 border-b">Votre panier</h2>
+              <h2 className="text-xl font-semibold mb-4 pb-2 border-b text-gray-700">Votre panier</h2>
               
               {cart.length === 0 ? (
                 <div className="py-6 text-center text-gray-500">
@@ -367,8 +367,8 @@ export default function Checkout() {
 
                   <div className="mt-6 pt-4 border-t">
                     <div className="flex justify-between items-center text-lg font-semibold mb-3">
-                      <span>Total:</span>
-                      <span>{total} CHF</span>
+                      <span className="text-gray-700">Total:</span>
+                      <span className="text-gray-700">{total} CHF</span>
                     </div>
                     
                     {discountedTotal !== null && (
@@ -397,7 +397,7 @@ export default function Checkout() {
                       <div>
                         <label className="form-control w-full">
                           <div className="label">
-                            <span className="label-text font-medium">Code bon cadeau</span>
+                            <span className="label-text font-medium text-gray-700">Code bon cadeau</span>
                           </div>
                           <div className="relative">
                             <input
