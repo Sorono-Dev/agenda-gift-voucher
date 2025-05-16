@@ -15,8 +15,8 @@ export async function action({ request }: ActionFunctionArgs) {
   // Définir un type plus précis pour le payload
   const payload: {
     type: string;
-    initialValue?: number;
-    initialSessions?: number;
+    value?: number;
+    sessions?: number;
     percent?: number;
     expiresAt?: string;
   } = { type };
@@ -24,10 +24,10 @@ export async function action({ request }: ActionFunctionArgs) {
   // Selon le type, on définit des propriétés différentes
   switch (type) {
     case "AMOUNT":
-      payload.initialValue = value;
+      payload.value = value;
       break;
     case "SESSION":
-      payload.initialSessions = value;
+      payload.sessions = value;
       break;
     case "PERCENT":
       payload.percent = value;
